@@ -10,7 +10,8 @@ const host = process.env.HOST
 
 const sequelize = new Sequelize(db, user, pass, {
     host: host,
-    dialect: 'mysql'
+    dialect: 'mysql',
+    dialectModule: require('mysql2')
 })
 
 async function authenticate(){
